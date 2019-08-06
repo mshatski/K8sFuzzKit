@@ -3,7 +3,7 @@
         "debug": false,
         "hyper-v": {
             "K8sFuzzKit_VM_CPU": 2,
-            "K8sFuzzKit_VM_MEM": 3072,
+            "K8sFuzzKit_VM_MEM": 2048,
             "K8sFuzzKit_VM_NAME": "K8sFuzzKit",
             "K8sFuzzKit_VM_VSWITCH": "internal_vSwitch_K8sFuzzKit",
             "K8sFuzzKit_VM_BASE_SUBNET": "10.1.100.",
@@ -12,7 +12,7 @@
         "vagrant": {
             "K8sFuzzKit_OS_IMAGE": "centos/7",
             "K8sFuzzKit_SMB_USERNAME": "vagrantsmb",
-            "K8sFuzzKit_SMB_PASSWORD": "24K8sKit09!1",
+            "K8sFuzzKit_SMB_PASSWORD": "24K8sKit09!124K8sKit09!1",
             "K8sFuzzKit_VM_SSH_PASSWORD": "#K8sFuzzKit#"
         },
         "kubernetes": { 
