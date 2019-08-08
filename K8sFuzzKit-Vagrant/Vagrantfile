@@ -129,7 +129,7 @@ Vagrant.configure(2) do |config|
                 h.enable_virtualization_extensions = true
                 h.linked_clone = true
                 h.vmname = "#{ENV['K8sFuzzKit_VM_NAME']}-Manager-Node0#{i}" 
-                h.ip_address_timeout = 240
+                h.ip_address_timeout = 600
                 h.cpus = ENV['K8sFuzzKit_VM_CPU']
                 h.memory = ENV['K8sFuzzKit_VM_MEM']       
             end 
@@ -261,7 +261,7 @@ Vagrant.configure(2) do |config|
                 h.enable_virtualization_extensions = true
                 h.linked_clone = true
                 h.vmname = "#{ENV['K8sFuzzKit_VM_NAME']}-Worker-Node0#{j}" 
-                h.ip_address_timeout = 240
+                h.ip_address_timeout = 600
                 h.cpus = ENV['K8sFuzzKit_VM_CPU']
                 h.memory = ENV['K8sFuzzKit_VM_MEM']       
             end 
