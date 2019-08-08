@@ -240,7 +240,7 @@ Function global:K8sFuzzKit_CopyToVM_HostsFile {
         $VMName = $element.Split(" ")[-1]
         "@@@@@ Create a new SSHSession on $VMName Server"
 		Start-Sleep -Milliseconds 500
-        New-SSHSession -ComputerName $IPNode -Credential $cred -Force
+        New-SSHSession -ComputerName $IPNode -Credential $cred -AcceptKey
         $SessionID = (Get-SSHSession).SessionId
 
         "@@@@@ Copy generated hosts file, base on your configuration, to $VMName Server"
@@ -272,7 +272,7 @@ Function global:K8sFuzzKit_Create_ClusterKubernetes {
 
     "@@@@@ Create a new SSHSession on $VMMasterName Server"
 	Start-Sleep -Milliseconds 500
-    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -Force
+    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -AcceptKey
     $SessionID = (Get-SSHSession).SessionId
 
     " "
@@ -314,7 +314,7 @@ Function global:K8sFuzzKit_Create_ClusterKubernetes {
         $IPWorkerNode = $worker.Split(" ")[-2]
         $VMWorkerName = $worker.Split(" ")[-1]
         "@@@@@ Create a new SSHSession on $VMWorkerName Server"
-        New-SSHSession -ComputerName $IPWorkerNode -Credential $cred -Force
+        New-SSHSession -ComputerName $IPWorkerNode -Credential $cred -AcceptKey
         $SessionWorkerID = (Get-SSHSession).SessionID
 
         "@@@@@ Join $VMWorkerName Server to the Kubernetes Cluster ... Please Wait ..."
@@ -351,7 +351,7 @@ Function global:K8sFuzzKit_InstallHelmAndTiller {
 
     "@@@@@ Create a new SSHSession on $VMMasterName Server"
 	Start-Sleep -Milliseconds 500
-    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -Force
+    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -AcceptKey
     $SessionID = (Get-SSHSession).SessionId
 
     Invoke-SSHCommand -Command $Command_InstallHelmAndTiller -SessionId $SessionID -TimeOut 600

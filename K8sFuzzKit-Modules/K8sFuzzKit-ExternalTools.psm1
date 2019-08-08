@@ -122,7 +122,7 @@ kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-adm
     $Command_InstallDashboardExecute = "chmod 700 /shared/InstallDashboard.sh && /shared/InstallDashboard.sh"
 
     "@@@@@ Create a new SSHSession on $VMMasterName Server"
-    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -Force
+    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -AcceptKey
     $SessionID = (Get-SSHSession).SessionId
 
     New-Item -Path .\shared\Dashboard -ItemType Directory
