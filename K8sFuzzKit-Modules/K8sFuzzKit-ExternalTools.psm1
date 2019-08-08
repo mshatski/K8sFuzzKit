@@ -21,7 +21,7 @@ helm install istio-*/install/kubernetes/helm/istio --name istio --namespace isti
 
     " "
     "@@@@@ Create a new SSHSession on $VMMasterName Server"
-    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -Force
+    New-SSHSession -ComputerName $IPMasterNode -Credential $cred -AcceptKey
     $SessionID = (Get-SSHSession).SessionId
 
     $TestTillerDeployUP = "kubectl get pods --namespace kube-system"    
